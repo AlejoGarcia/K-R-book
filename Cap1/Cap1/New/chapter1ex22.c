@@ -13,11 +13,11 @@ void insert_string(char line[], char source[], int pos, int num);
 void insert_chars(char line[], int pos, char val, int rep);
 void delete_chars(char line[], int pos, int rep);
 
-
+/* folds long input lines respecting words */
 main()
 {
-	int len;		
-	char line[MAXLINE]; 	
+	int len;		/* current line length */
+	char line[MAXLINE]; 	/* current input line */
 
 	while ((len = my_getline(line, MAXLINE)) > 0) {
 		fold_line(line, MAXCOL);
@@ -26,7 +26,7 @@ main()
 	return 0; 
 }
 
-
+/* getline: read a line into s, return length */
 int my_getline(char s[], int lim)
 {
 	int c, i;
@@ -41,7 +41,7 @@ int my_getline(char s[], int lim)
 	return i;
 }
 
-
+/* copy: copy 'from' into 'to'; assumes to is big enough */
 void copy(char to[], char from[])
 {
 	int i;
@@ -49,7 +49,7 @@ void copy(char to[], char from[])
 	for (i = 0; (to[i] = from[i]) != '\0'; i++);
 }
 
- 
+/* substring: copy 'from' into 'to' only from position p and for n elements */ 
 void substring(char to[], char from[], int p, int n)
 {
 	int i;
@@ -58,7 +58,7 @@ void substring(char to[], char from[], int p, int n)
 	to[i] = '\0';
 }
 
-
+/* fold_line: folds line respecting spaces when possible */
 void fold_line(char s[], int f)
 {
 	int i, lf, lb, c;
@@ -83,7 +83,7 @@ void fold_line(char s[], int f)
 	}
 }
 
-
+/* detab_line: changes tabs for spaces taking tabstop in account */
 void detab_line(char s[], int t)
 {
 	int i;
@@ -96,7 +96,7 @@ void detab_line(char s[], int t)
 	}
 }
 
-
+/* entab_line: changes spaces for tabs taking tabstop in account */
 void entab_line(char s[], int t)
 {
 	int i, j;
@@ -117,7 +117,7 @@ void entab_line(char s[], int t)
 	}
 }
 
-
+/* insert_string: insert string d in string s at pos p at most n characters; assumes s is large enought */
 void insert_string(char s[], char d[], int p, int n)
 {
 	int i;
@@ -131,7 +131,7 @@ void insert_string(char s[], char d[], int p, int n)
 		s[p + i] = d[i];
 }
 
-
+/* insert_chars: insert char c in string s at pos p n times; assumes s is large enought */
 void insert_chars(char s[], int p, char c, int n)
 {
 	int i;
@@ -145,7 +145,7 @@ void insert_chars(char s[], int p, char c, int n)
 		s[p + i] = c;
 }
 
-
+/* delete_chars: delete n chars from string s at pos p */
 void delete_chars(char s[], int p, int n)
 {
 	int i;
