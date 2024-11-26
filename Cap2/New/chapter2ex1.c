@@ -18,7 +18,7 @@ main()
 	double j;
 	long double k;
 	
-	printf("LIMITS CALC\n");
+	printf("\n\nLIMITS CALC\n");
 
 	/* signed */
 	printf("\n");

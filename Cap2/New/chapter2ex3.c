@@ -3,7 +3,7 @@
 
 int htoi(char hex[]);
 
-/* test funtion htoi */
+/* test function htoi */
 main()
 {
 	/* test convertin string "ab23ed" */
@@ -16,7 +16,7 @@ main()
 	printf("0X5a5a = %d\n", htoi("0X5a5a"));
 }
 
-/* converts string s containing a hex value to its int value */
+/* htoi: converts string s containing a hex value to its int value */
 int htoi(char s[])
 {
 	int i, n;

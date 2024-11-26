@@ -3,6 +3,11 @@
 /* loop conditions without && and || */
 main()
 {
+  int i;
+  const int lim = 100;
+  char s[lim];
+  char c;
+
 	/*
 	for (i = 0; i < lim - 1 && (c = getchar()) != '\n' && c != EOF; ++i)
 		s[i] = c;
@@ -17,4 +22,5 @@ main()
 		s[i] = c;
 		++i;
 	}
+  printf("Read line: %s\n", s);
 }
